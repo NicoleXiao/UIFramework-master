@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using UnityEngine.UI;
 using UIFramework;
+using UnityEngine.UI;
 
 public class MessageUI : UIBase
 {

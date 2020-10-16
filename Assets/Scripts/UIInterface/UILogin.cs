@@ -29,8 +29,7 @@ public class UILogin : UIBase
         }
         SaveLoginInfo();
         //Test data
-        UIManager.GetInstance().ShowUI(UIName.HomeUI, new object[] { "这是第一次数据" });
-        UIManager.GetInstance().ShowUI(UIName.HomeUI,new object[] { "这是第二次数据" });
+        UIManager.GetInstance().ShowUI(UIName.HomeUI, new object[] { "数据测试！！！" });
     }
 
 

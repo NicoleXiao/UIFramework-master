@@ -1,8 +1,5 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using UnityEngine.Events;
-using UnityEngine;
-using System;
 
 
 namespace UIFramework
@@ -30,7 +27,7 @@ namespace UIFramework
             }
         }
 
-        
+
         public void AddMsgLister<T1, T2>(string eventType, Action<T1, T2> handler)
         {
             if (OnHandlerAdding(eventType, handler))

@@ -8,9 +8,9 @@
 
 namespace Sirenix.OdinInspector.Editor.Drawers
 {
-    using Utilities.Editor;
     using UnityEditor;
     using UnityEngine;
+    using Utilities.Editor;
 
     /// <summary>
     /// Vector2Int proprety drawer.

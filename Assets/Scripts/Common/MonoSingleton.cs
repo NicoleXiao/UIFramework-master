@@ -47,15 +47,15 @@ public class MonoSingleton<T> : MonoBehaviour where T : Component
 
     public static void DestroyInstance()
     {
-        
+
         if (_instance != null)
         {
             Object.Destroy(_instance.gameObject);
         }
         _destroyed = true;
         _instance = null;
-        
-        
+
+
     }
 
     public static void ClearDestroy()
@@ -105,7 +105,8 @@ public class MonoSingleton<T> : MonoBehaviour where T : Component
     {
     }
 
-    private void OnApplicationQuit() {
+    private void OnApplicationQuit()
+    {
         m_IsApplicationQuit = true;
     }
 }

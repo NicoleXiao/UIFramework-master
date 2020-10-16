@@ -184,7 +184,7 @@ namespace Sirenix.OdinInspector.Editor.Drawers
                     }
                 }
 
-                if (GUIHelper.CurrentWindow) 
+                if (GUIHelper.CurrentWindow)
                 {
                     EditorApplication.delayCall += GUIHelper.CurrentWindow.Close;
                 }
@@ -196,7 +196,7 @@ namespace Sirenix.OdinInspector.Editor.Drawers
                 EditorPrefs.SetBool(AUTO_FIX_PREFS_KEY, true);
                 autoFix = true;
 
-                if (GUIHelper.CurrentWindow) 
+                if (GUIHelper.CurrentWindow)
                 {
                     EditorApplication.delayCall += GUIHelper.CurrentWindow.Close;
                 }

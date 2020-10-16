@@ -3,7 +3,7 @@
 
 namespace UIFramework
 {
-    public static class ActionExtension 
+    public static class ActionExtension
     {
         public static void TryInvoke<T>(this Action<T> action, T param)
         {

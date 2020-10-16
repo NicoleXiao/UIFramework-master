@@ -1,10 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using System.Linq;
 
 namespace UIFramework
 {
@@ -399,6 +397,17 @@ namespace UIFramework
                 list.CloseAll();
             }
             ChangeShowMask();
+        }
+
+        /// <summary>
+        /// 获取最高层级的UI
+        /// </summary>
+        /// <param name="uiType"></param>
+        /// <returns></returns>
+        public UIBase GetTopUI(UIType uiType)
+        {
+            if (uiType == UIType.None) return null;
+            return m_listMgr[uiType].GetTopUI();
         }
     }
 }

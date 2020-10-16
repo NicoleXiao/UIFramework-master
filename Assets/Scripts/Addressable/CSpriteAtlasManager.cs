@@ -63,7 +63,7 @@ namespace UIFramework
             }
             else
             {
-                Debug.Log("Atlas Requested  ："  +  tag);
+                Debug.Log("Atlas Requested  ：" + tag);
                 var primaryKey = AddressableMgr.instance.GetSpriteAltasPrimaryKey(tag);
                 if (!string.IsNullOrEmpty(primaryKey))
                 {

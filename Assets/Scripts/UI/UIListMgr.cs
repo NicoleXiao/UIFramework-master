@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections.Generic;
 
 namespace UIFramework
 {
-    public class UIListMgr 
+    public class UIListMgr
     {
-        
         public UIType uiType { get; private set; }
         /**UI的sortingOrder的取值差值*/
         private int m_layerSpace = 10;
@@ -18,8 +13,6 @@ namespace UIFramework
         private List<UIBase> m_list = new List<UIBase>();
         /**当前需要Mask的UI*/
         public UIBase curNeedMaskUI { private set; get; }
-
-        public Action<UIBase> ChangeMaskUI;
 
 
         /// <summary>
@@ -46,21 +39,10 @@ namespace UIFramework
         /// 获取当前最高层级数
         /// </summary>
         /// <returns></returns>
-        public int GetTopUILayer()
+        public UIBase GetTopUI()
         {
-            return GetSortingOrder(m_list.Count - 1);
-        }
-
-        public UIBase GetNeedMaskUI()
-        {
-            for (int i = m_list.Count - 1; i >= 0; i--)
-            {
-                if (m_list[i].maskType != UIMaskType.None)
-                {
-                    return m_list[i];
-                }
-            }
-            return null;
+            if (m_list.Count <= 0) return null;
+            return m_list[m_list.Count - 1];
         }
 
 
@@ -92,14 +74,16 @@ namespace UIFramework
             SetNeedMaskUI();
         }
 
-
+        /// <summary>
+        ///设置当前需要Mask的类型，优先考虑最高层级的UI。
+        /// </summary>
         private void SetNeedMaskUI()
         {
             curNeedMaskUI = null;
             for (int i = m_list.Count - 1; i >= 0; i--)
             {
                 var ui = m_list[i];
-                if (ui.maskType != UIMaskType.None )
+                if (ui.maskType != UIMaskType.None)
                 {
                     curNeedMaskUI = ui;
                     break;
@@ -114,7 +98,7 @@ namespace UIFramework
         public void CloseCurUI(UIName uiName)
         {
             if (m_list.Count == 0) return;
-            int removeIndex= m_list.FindIndex(0,(UIBase ui)=> ui.uiName == uiName);
+            int removeIndex = m_list.FindIndex(0, (UIBase ui) => ui.uiName == uiName);
             m_list[removeIndex].DeSpawnUI();
             m_list.RemoveAt(removeIndex);
             int count = m_list.Count;

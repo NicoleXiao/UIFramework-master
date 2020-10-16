@@ -1,13 +1,13 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using Sirenix.OdinInspector;
-using System;
 
 namespace UIFramework
 {
 
-    public class UIBase : MonoBehaviour
+    public class UIBase : BaseMonobehaviour
     {
         [SerializeField]
         private Button m_backBtn;
@@ -17,9 +17,6 @@ namespace UIFramework
         public UIType uiType;
 
         public UIMaskType maskType;
-
-        public UILayer layer { get; private set; }
-
 
         protected object[] data;
 
@@ -224,6 +221,11 @@ namespace UIFramework
         /// 摧毁
         /// </summary>
         protected virtual void Destroy()
+        {
+
+        }
+
+        protected virtual void OnQuit()
         {
 
         }

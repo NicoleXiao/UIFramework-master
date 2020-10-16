@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,7 +15,7 @@ namespace UIFramework
         protected override void Show()
         {
             base.Show();
-            maskImage.GetComponent<Button>().onClick.AddListener(()=>OnClickMask());
+            maskImage.GetComponent<Button>().onClick.AddListener(() => OnClickMask());
         }
 
         public void ManagerMaskShow(UIBase ui)
@@ -46,7 +44,7 @@ namespace UIFramework
             ResumeUI();
         }
 
-       
+
 
         public void SetTransparent()
         {
